@@ -1,12 +1,16 @@
+#Gui for text_to_speech using Python
+#after the program executes you can use a simple GUI to convert your text file to speech file
+#an executable file and a example is provided in the repository
+
+#importing different modules
 from gtts import gTTS
 import os
 import tkinter as tk
 from tkinter import filedialog,Text
+#creating root for our GUI
 root=tk.Tk()
-
-
 apps=[]
-def addapp():
+def addapp(): #adding a button action for openfile button
     for widget in frame.winfo_children():
         widget.destroy()
     filename=filedialog.askopenfilename(initialdir='/',title="Select File",filetypes=(("text","*.txt"),("all files","*.*")))
@@ -16,7 +20,7 @@ def addapp():
         label.pack()
 
 
-def run():
+def run(): #adding a button action for run button
     for app in apps:
         fh=open(app,'r')
         mytext=fh.read()
@@ -61,6 +65,6 @@ runtest.pack()
 
 root.mainloop()
 
-#######
+#root loops ends here
 
     
